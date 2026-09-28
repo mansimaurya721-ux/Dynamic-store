@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dynamic Store</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <h1>Dynamic Store</h1>
+
+        <div class="cart">
+            🛒 Cart:
+            <span id="cartCount">0</span>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Error Banner -->
+        <div id="errorBanner" class="error-banner hidden">
+            <span id="errorMessage"></span>
+            <button id="closeError">×</button>
+        </div>
+
+
+        <!-- Controls -->
+
+        <section class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+            >
+
+            <select id="sortSelect">
+
+                <option value="default">
+                    Sort By
+                </option>
+
+                <option value="price-low">
+                    Price: Low to High
+                </option>
+
+                <option value="price-high">
+                    Price: High to Low
+                </option>
+
+                <option value="name">
+                    Name: A-Z
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- Categories -->
+
+        <section class="categories">
+
+            <button
+                class="category-btn active"
+                data-category="all">
+                All
+            </button>
+
+            <div id="categoryButtons"></div>
+
+        </section>
+
+
+        <!-- Loading Skeleton -->
+
+        <section
+            id="loading"
+            class="product-grid hidden">
+
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+
+        </section>
+
+
+        <!-- Products -->
+
+        <section
+            id="productContainer"
+            class="product-grid">
+        </section>
+
+
+        <!-- Empty State -->
+
+        <p
+            id="noProducts"
+            class="no-products hidden">
+            No products found.
+        </p>
+
+    </main>
+
+
+    <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
